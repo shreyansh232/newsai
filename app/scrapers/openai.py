@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta, timezone
 from typing import List, Optional
 import feedparser
-from docling.document_converter import DocumentConverter
+# from docling.document_converter import DocumentConverter
 from pydantic import BaseModel
 
 
@@ -17,7 +17,7 @@ class OpenAIArticle(BaseModel):
 class OpenAIScraper:
     def __init__(self):
         self.rss_url = "https://openai.com/news/rss.xml"
-        self.converter = DocumentConverter()
+        # self.converter = DocumentConverter()
 
     
     def get_articles(self, hours: int = 24) -> List[OpenAIArticle]:
