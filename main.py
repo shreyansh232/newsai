@@ -1,6 +1,6 @@
 from app.runner import run_scrapers
 
-def main(hours: int = 24):
+def main(hours: int = 72):
         results = run_scrapers(hours=hours)
     
         print(f"\n=== Scraping Results (last {hours} hours) ===")
@@ -12,5 +12,8 @@ def main(hours: int = 24):
 
 if __name__ == "__main__":
     import sys
-    hours = int(sys.argv[1]) if len(sys.argv) > 1 else 24
-    main(hours=hours)
+    if len(sys.argv) > 1:
+        hours = int(sys.argv[1])
+        main(hours=hours)
+    else:
+        main()  # Uses default 72
