@@ -41,3 +41,15 @@ class AnthropicArticle(Base):
     category = Column(String, nullable=True)
     markdown = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class Digest(Base):
+    __tablename__ = "digests"
+    
+    id = Column(String, primary_key=True)
+    article_type = Column(String, nullable=False)
+    article_id = Column(String, nullable=False)
+    url = Column(String, nullable=False)
+    title = Column(String, nullable=False)
+    summary = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
